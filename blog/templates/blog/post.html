@@ -1,0 +1,21 @@
+{% extends "blog/base.html" %}
+
+{% block cont %}
+<form action="" method="POST">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<input type="submit" value="comentar" class="btn btn-info">
+</form>
+<hr>
+<h1>{{ p.titulo }} - <small>{{ p.p_date }}</small></h1>
+<p>{{ p.contenido }}</p>
+<hr>
+<h2>Comentarios: </h2><br>
+<div class="container">
+{% for x in c %}
+<p id="{{ x.id }}">{{ x.comentario }}</p><br>
+<h5>{{ x.p_date }}</h5>
+<hr>
+{% endfor %}
+</div>
+{% endblock cont %}

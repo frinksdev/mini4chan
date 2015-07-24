@@ -1,0 +1,12 @@
+{% extends "blog/base.html" %}
+
+{% block cont %}
+<a href="{% url 'blog.views.add' %} " class="btn btn-default">Postear</a>
+<br>
+<hr>
+{% for p in post %}
+<h3>{{ p.titulo }} - {{ p.autor }} <small>{{ p.c_date }} - [ <a href="{% url 'blog.views.view_p' pk=p.pk %}">comentar</a> ]</small></h3>
+<p>{{ p.contenido }}</p>
+<hr>
+{% endfor %}
+{% endblock cont %}

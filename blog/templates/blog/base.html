@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width initial-scale=1 maximum-scale=1 user-scalable=no">
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<title>tec-chan</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<h1><a href="{% url 'blog.views.index' %}">tec-chan</a></h1>
+		<button type="button" data-toggle="modal" data-target="#rules" class="btn btn-warning">Reglas</button>
+		<hr>
+		<div class="container">
+		{% block cont %}
+		{% endblock %}
+		</div>
+	</body>
+	<div id="rules" class="modal fade" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h2>Reglas</h2>
+			</div>
+			<div class="modal-body">
+				<ul>
+					<li>el porno será regulado: pedofilia, necrofilia y zoofilia prohibidas</li>
+				</ul>
+				<p>tu post debe iniciar con [RULE] para que los administradores la analizen, y si tiene aprobación, se colocará como nueva regla de la página</p>
+			</div>
+			<div class="modal-footer">
+				<a data-dismiss="modal" class="btn btn-danger">Cerrar</a>
+			</div>
+		</div>
+	</div>
+</div>
+</html>
